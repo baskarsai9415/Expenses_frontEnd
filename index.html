@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <label for="cars">Choose a category:</label>
+    <select name="cars" id="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+    <!-- <input id="box1" type="text" placeholder="Enter the Category Name"/> -->
+    <button id="modalBtn" class="button">Add Category</button>
+
+    <div id="simpleModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-Header">
+          <span class="closeBtn">&times;</span>
+          <h2>Please Enter the New Category Type</h2>
+        </div>
+        <div class="modal-body">
+          <div id="newcat" class="newcat">
+            <label>Category Name</label>
+            <input type="text" name="categoryname" placeholder="Enter Category Name">
+          </div>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <label>Transaction Type</label>
+        <select name="Transaction Type">
+            <option value="Credit">Credit</option>
+            <option value="Debit">Debit</option>
+        </select>
+    </div>
+    <div class="container1">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" placeholder="Enter the amount">
+    </div>
+    <div id="entry"></div>
+    <script src="script.js"/>
+  </body>
+</html>
