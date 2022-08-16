@@ -3,7 +3,17 @@ var modalBtn = document.getElementById('modalBtn');
 var closeBtn = document.getElementsByClassName('closeBtn')[0];
 const e1 = document.getElementById('entry')
 const b1 = document.getElementById('btn1')
-const select = document.getElementById('cars')
+const select = document.getElementById('category')
+
+
+document.getElementById("formsubmit").addEventListener("click", function(event){
+    event.preventDefault()
+    const formData = new FormData(document.getElementById('form1'))
+    for (var pair of formData.entries()) {
+    console.log(pair[0] + ': ' + pair[1]);
+}
+});
+
 
 modalBtn.addEventListener('click',openModal);
 
@@ -50,6 +60,7 @@ const getData =  async ()=>{
     const data = await res.json()
     console.log(data)
     const{categories,expenses} = data
+    console.log("categories:",categories)
     var innerHTML=''
     expenses.forEach((item)=>{
         innerHTML = innerHTML + generateCard(item)
@@ -58,7 +69,7 @@ const getData =  async ()=>{
     
     var innerHTML1 = ''
     categories.forEach((item)=>{
-        innerHTML1 = innerHTML1 + `<option value="${item}">${item}</option>`
+        innerHTML1 = innerHTML1 + `<option value="${item.category_type}">${item.category_type}</option>`
     })
     select.innerHTML = innerHTML1
     return data
